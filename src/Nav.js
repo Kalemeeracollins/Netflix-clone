@@ -18,6 +18,10 @@ function Nav() {
     };
   }, []);
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   return (
     //   Always use nav css, except when scrolling 100px down we want the black__navbar class
     <div className={`nav ${show && "nav__black"}`}>
@@ -25,7 +29,8 @@ function Nav() {
       <img
         className="nav__logo"
         src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
-        alt=""
+        alt="" style={{cursor:'pointer'}}
+        onClick={refreshPage}
       />
       {/* Small corner logo */}
       <img
